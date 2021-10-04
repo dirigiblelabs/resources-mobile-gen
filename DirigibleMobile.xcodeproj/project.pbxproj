@@ -13,6 +13,8 @@
 		5F9CCD8F26FA032F005BB433 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F9CCD8E26FA032F005BB433 /* Assets.xcassets */; };
 		5F9CCD9226FA032F005BB433 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F9CCD9126FA032F005BB433 /* Preview Assets.xcassets */; };
 		5F9CCD9526FA032F005BB433 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F9CCD9326FA032F005BB433 /* LaunchScreen.storyboard */; };
+		5F9CCD9F26FA1C65005BB433 /* WDBSetWebSecurityEnabled.h in Sources */ = {isa = PBXBuildFile; fileRef = 5F9CCD9E26FA1C65005BB433 /* WDBSetWebSecurityEnabled.h */; };
+		5F9CCDA226FA20E9005BB433 /* CorsDisable.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9CCDA126FA20E9005BB433 /* CorsDisable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		5F9CCD9126FA032F005BB433 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5F9CCD9426FA032F005BB433 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F9CCD9626FA032F005BB433 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F9CCD9C26FA1C65005BB433 /* DirigibleMobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DirigibleMobile-Bridging-Header.h"; sourceTree = "<group>"; };
+		5F9CCD9E26FA1C65005BB433 /* WDBSetWebSecurityEnabled.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDBSetWebSecurityEnabled.h; sourceTree = "<group>"; };
+		5F9CCDA026FA20E9005BB433 /* CorsDisable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CorsDisable.h; sourceTree = "<group>"; };
+		5F9CCDA126FA20E9005BB433 /* CorsDisable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CorsDisable.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,10 @@
 				5F9CCD9326FA032F005BB433 /* LaunchScreen.storyboard */,
 				5F9CCD9626FA032F005BB433 /* Info.plist */,
 				5F9CCD9026FA032F005BB433 /* Preview Content */,
+				5F9CCD9E26FA1C65005BB433 /* WDBSetWebSecurityEnabled.h */,
+				5F9CCD9C26FA1C65005BB433 /* DirigibleMobile-Bridging-Header.h */,
+				5F9CCDA026FA20E9005BB433 /* CorsDisable.h */,
+				5F9CCDA126FA20E9005BB433 /* CorsDisable.m */,
 			);
 			path = DirigibleMobile;
 			sourceTree = "<group>";
@@ -106,6 +116,7 @@
 				TargetAttributes = {
 					5F9CCD8426FA032E005BB433 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -148,6 +159,8 @@
 				5F9CCD8926FA032E005BB433 /* AppDelegate.swift in Sources */,
 				5F9CCD8B26FA032E005BB433 /* SceneDelegate.swift in Sources */,
 				5F9CCD8D26FA032E005BB433 /* ContentView.swift in Sources */,
+				5F9CCDA226FA20E9005BB433 /* CorsDisable.m in Sources */,
+				5F9CCD9F26FA1C65005BB433 /* WDBSetWebSecurityEnabled.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +217,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -264,7 +277,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -286,10 +299,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"DirigibleMobile/Preview Content\"";
 				DEVELOPMENT_TEAM = H6KAAZFWNY;
 				ENABLE_PREVIEWS = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = DirigibleMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -297,6 +312,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.eclipse.dirigible.mobile.DirigibleMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DirigibleMobile/DirigibleMobile-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -307,10 +324,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"DirigibleMobile/Preview Content\"";
 				DEVELOPMENT_TEAM = H6KAAZFWNY;
 				ENABLE_PREVIEWS = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = DirigibleMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -318,6 +337,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.eclipse.dirigible.mobile.DirigibleMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DirigibleMobile/DirigibleMobile-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

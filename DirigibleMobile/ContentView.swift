@@ -6,16 +6,37 @@
 //
 
 import SwiftUI
+import WebKit
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Webview(url: URL(string: "APP_URL")!)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+struct Webview: UIViewRepresentable {
+    let url: URL
+
+    func makeUIView(context: UIViewRepresentableContext<Webview>) -> WKWebView {
+        
+        let config = WKWebViewConfiguration()
+        config.setValue(true, forKey: "allowUniversalAccessFromFileURLs")
+        config.preferences.setValue(true, forKey: "allowFileAccessFromFileURLs")
+        CorsDisable.disableCors(config.preferences)
+        let webview = WKWebView(frame: CGRect.zero, configuration: config)
+        CorsDisable.disableCors(webview.configuration.preferences)
+
+        let request = URLRequest(url: self.url)
+      
+        webview.load(request)
+        
+        
+
+        return webview
+    }
+
+    func updateUIView(_ webview: WKWebView, context: UIViewRepresentableContext<Webview>) {
+        let request = URLRequest(url: self.url, cachePolicy: .returnCacheDataElseLoad)
+        webview.load(request)
     }
 }
