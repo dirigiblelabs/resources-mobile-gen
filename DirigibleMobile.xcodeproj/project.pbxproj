@@ -15,7 +15,23 @@
 		5F9CCD9526FA032F005BB433 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F9CCD9326FA032F005BB433 /* LaunchScreen.storyboard */; };
 		5F9CCD9F26FA1C65005BB433 /* WDBSetWebSecurityEnabled.h in Sources */ = {isa = PBXBuildFile; fileRef = 5F9CCD9E26FA1C65005BB433 /* WDBSetWebSecurityEnabled.h */; };
 		5F9CCDA226FA20E9005BB433 /* CorsDisable.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9CCDA126FA20E9005BB433 /* CorsDisable.m */; };
+		5FD8463C270C58EE005AB313 /* NativeScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD8463A270C58DD005AB313 /* NativeScript.framework */; };
+		5FD8463D270C58EE005AB313 /* NativeScript.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD8463A270C58DD005AB313 /* NativeScript.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5FD8463E270C58EE005AB313 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5FD8463D270C58EE005AB313 /* NativeScript.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5F9CCD8526FA032E005BB433 /* DirigibleMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DirigibleMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,6 +46,7 @@
 		5F9CCD9E26FA1C65005BB433 /* WDBSetWebSecurityEnabled.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDBSetWebSecurityEnabled.h; sourceTree = "<group>"; };
 		5F9CCDA026FA20E9005BB433 /* CorsDisable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CorsDisable.h; sourceTree = "<group>"; };
 		5F9CCDA126FA20E9005BB433 /* CorsDisable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CorsDisable.m; sourceTree = "<group>"; };
+		5FD8463A270C58DD005AB313 /* NativeScript.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NativeScript.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FD8463C270C58EE005AB313 /* NativeScript.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +64,7 @@
 		5F9CCD7C26FA032E005BB433 = {
 			isa = PBXGroup;
 			children = (
+				5FD8463A270C58DD005AB313 /* NativeScript.framework */,
 				5F9CCD8726FA032E005BB433 /* DirigibleMobile */,
 				5F9CCD8626FA032E005BB433 /* Products */,
 			);
@@ -92,9 +111,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F9CCD9926FA032F005BB433 /* Build configuration list for PBXNativeTarget "DirigibleMobile" */;
 			buildPhases = (
+				5FD84637270C5846005AB313 /* NativeScript PreBuild */,
 				5F9CCD8126FA032E005BB433 /* Sources */,
+				5FD84638270C5887005AB313 /* NativeScript PreLink */,
 				5F9CCD8226FA032E005BB433 /* Frameworks */,
 				5F9CCD8326FA032E005BB433 /* Resources */,
+				5FD84639270C58AB005AB313 /* NativeScript PostBuild */,
+				5FD8463E270C58EE005AB313 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -150,6 +173,63 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5FD84637270C5846005AB313 /* NativeScript PreBuild */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "NativeScript PreBuild";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/internal/nativescript-pre-build\"\n";
+		};
+		5FD84638270C5887005AB313 /* NativeScript PreLink */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "NativeScript PreLink";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/internal/nativescript-pre-link\"\n";
+		};
+		5FD84639270C58AB005AB313 /* NativeScript PostBuild */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "NativeScript PostBuild";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/internal/nativescript-post-build\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5F9CCD8126FA032E005BB433 /* Sources */ = {
@@ -304,6 +384,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"DirigibleMobile/Preview Content\"";
 				DEVELOPMENT_TEAM = H6KAAZFWNY;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = DirigibleMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -316,6 +400,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -329,6 +414,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"DirigibleMobile/Preview Content\"";
 				DEVELOPMENT_TEAM = H6KAAZFWNY;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = DirigibleMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -340,6 +429,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "DirigibleMobile/DirigibleMobile-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};
