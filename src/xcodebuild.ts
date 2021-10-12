@@ -41,6 +41,9 @@ function xcodebuild() {
   parameters.push("-sdk");
   parameters.push("iphonesimulator");
   parameters.push('SYMROOT=' + buildDir)
+  //remove later
+  parameters.push('ARCHS=x86_64')
+  parameters.push('ONLY_ACTIVE_ARCH=NO')
 
   var child = proc.spawn('xcodebuild', parameters, {
     cwd: root

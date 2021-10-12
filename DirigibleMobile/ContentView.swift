@@ -20,18 +20,9 @@ struct Webview: UIViewRepresentable {
     func makeUIView(context: UIViewRepresentableContext<Webview>) -> WKWebView {
         
         let config = WKWebViewConfiguration()
-        config.setValue(true, forKey: "allowUniversalAccessFromFileURLs")
-        config.preferences.setValue(true, forKey: "allowFileAccessFromFileURLs")
-        CorsDisable.disableCors(config.preferences)
         let webview = WKWebView(frame: CGRect.zero, configuration: config)
-        CorsDisable.disableCors(webview.configuration.preferences)
-
         let request = URLRequest(url: self.url)
-      
         webview.load(request)
-        
-        
-
         return webview
     }
 

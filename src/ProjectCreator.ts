@@ -17,7 +17,8 @@ export default class ProjectCreator {
 
     static setUrl(oldUrl: string, newUrl: string) {
         return new Promise((resolve, reject) => {
-            let filePath = path.join(__dirname, '..', "DirigibleMobile/ContentView.swift");
+            // let filePath = path.join(__dirname, '..', "DirigibleMobile/ContentView.swift");
+            let filePath = path.join(__dirname, '..', "NSDirigibleTemplate/NSDirigibleTemplate/ViewController.m");
 
             fs.readFile(filePath, 'utf8', function (err,data) {
                 if (err) {
@@ -42,7 +43,7 @@ export default class ProjectCreator {
     static buildArchive() {
         return new Promise((resolve, reject) => {
             xcodebuild('build', {
-                path: path.join(__dirname, '..')
+                path: path.join(__dirname, '../NSDirigibleTemplate')
               }, function (error: any) {
                 if (error) {
                     reject(error);

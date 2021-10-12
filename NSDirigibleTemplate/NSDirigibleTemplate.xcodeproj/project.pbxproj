@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F591C2D27157A6A0023388C /* NativeScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F591C2B27157A660023388C /* NativeScript.framework */; };
+		5F591C2E27157A6A0023388C /* NativeScript.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F591C2B27157A660023388C /* NativeScript.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5FD8464D270C5A41005AB313 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD8464C270C5A41005AB313 /* AppDelegate.m */; };
 		5FD84650270C5A41005AB313 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD8464F270C5A41005AB313 /* SceneDelegate.m */; };
 		5FD84653270C5A41005AB313 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD84652270C5A41005AB313 /* ViewController.m */; };
@@ -14,8 +16,6 @@
 		5FD84658270C5A42005AB313 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FD84657270C5A42005AB313 /* Assets.xcassets */; };
 		5FD8465B270C5A42005AB313 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FD84659270C5A42005AB313 /* LaunchScreen.storyboard */; };
 		5FD8465E270C5A42005AB313 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD8465D270C5A42005AB313 /* main.m */; };
-		5FD84671270CA591005AB313 /* NativeScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD8466C270C5B2B005AB313 /* NativeScript.framework */; };
-		5FD84672270CA591005AB313 /* NativeScript.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD8466C270C5B2B005AB313 /* NativeScript.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5FD84674270CA9F8005AB313 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD84673270CA9F8005AB313 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +26,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5FD84672270CA591005AB313 /* NativeScript.framework in Embed Frameworks */,
+				5F591C2E27157A6A0023388C /* NativeScript.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -34,6 +34,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F591C2B27157A660023388C /* NativeScript.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NativeScript.framework; sourceTree = "<group>"; };
 		5FD84648270C5A41005AB313 /* NSDirigibleTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSDirigibleTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FD8464B270C5A41005AB313 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5FD8464C270C5A41005AB313 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -46,7 +47,6 @@
 		5FD8465A270C5A42005AB313 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5FD8465C270C5A42005AB313 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FD8465D270C5A42005AB313 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5FD8466C270C5B2B005AB313 /* NativeScript.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NativeScript.framework; sourceTree = "<group>"; };
 		5FD84673270CA9F8005AB313 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -55,8 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F591C2D27157A6A0023388C /* NativeScript.framework in Frameworks */,
 				5FD84674270CA9F8005AB313 /* WebKit.framework in Frameworks */,
-				5FD84671270CA591005AB313 /* NativeScript.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,8 +101,8 @@
 		5FD84669270C5A79005AB313 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5F591C2B27157A660023388C /* NativeScript.framework */,
 				5FD84673270CA9F8005AB313 /* WebKit.framework */,
-				5FD8466C270C5B2B005AB313 /* NativeScript.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -301,6 +301,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -361,6 +362,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -387,6 +389,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H6KAAZFWNY;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/",
 					"$(PROJECT_DIR)",
@@ -418,6 +421,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H6KAAZFWNY;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/",
 					"$(PROJECT_DIR)",

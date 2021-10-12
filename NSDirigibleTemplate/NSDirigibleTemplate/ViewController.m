@@ -26,7 +26,7 @@
     
     _webview.navigationDelegate = self;
     
-    NSURL *targetURL = [NSURL URLWithString:@"http://trial-dirigible.ingress.aws.promart.shoot.canary.k8s-hana.ondemand.com/services/v4/web/native/index.html?refreshToken=1632900788673"];
+    NSURL *targetURL = [NSURL URLWithString:@"http://localhost:8080/services/v4/web/www/index.html"];
     NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
     [_webview loadRequest:request];
     [_webview.configuration.userContentController addScriptMessageHandler:self name:@"executor"];
