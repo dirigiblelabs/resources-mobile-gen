@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
     [[NSNotificationCenter defaultCenter]
             addObserver:self
@@ -26,7 +25,7 @@
     
     _webview.navigationDelegate = self;
     
-    NSURL *targetURL = [NSURL URLWithString:@"http://localhost:8080/services/v4/web/www/index.html"];
+    NSURL *targetURL = [NSURL URLWithString:@"APP_URL"];
     NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
     [_webview loadRequest:request];
     [_webview.configuration.userContentController addScriptMessageHandler:self name:@"executor"];
@@ -37,16 +36,16 @@
 
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
     
-    if (message.name == @"executor") {
+    if ([message.name  isEqual: @"executor"]) {
 //        [NativeScript reinitialize];
         [NativeScript runScriptString: message.body];
     }
     
-    if (message.name == @"terminator") {
+    if ([message.name  isEqual: @"terminator"]) {
 //        [NativeScript terminate];
     }
     
-    if (message.name == @"postMessageListener") {
+    if ([message.name  isEqual: @"postMessageListener"]) {
         NSString* scr = [NSString stringWithFormat:@"onmessage(%@)", message.body];
         [NativeScript runScriptString:scr];
     }
@@ -62,7 +61,7 @@
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     [_webview evaluateJavaScript:[self getWorkerScript] completionHandler:^(id _Nullable res, NSError * _Nullable error) {
         if (error) {
-            NSLog([error debugDescription]);
+            NSLog(@"%@", [error debugDescription]);
         }
     }];
 }
