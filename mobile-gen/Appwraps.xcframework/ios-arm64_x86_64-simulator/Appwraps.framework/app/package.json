@@ -1,0 +1,11 @@
+{
+	"name": "deletemens",
+	"id": "org.nativescript.deletemens",
+	"appPath": "app",
+	"appResourcesPath": "App_Resources",
+	"android": {
+		"v8Flags": "--expose_gc",
+		"markingMode": "none"
+	},
+	"main": "bundle"
+}

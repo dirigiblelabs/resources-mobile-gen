@@ -1,0 +1,53 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Appwraps
+@_exported import Appwraps
+import Foundation
+import NativeScript
+import Swift
+import UIKit
+import WebKit
+import _Concurrency
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class NSDispatcher : ObjectiveC.NSObject {
+  @objc public static let _singletonInstance: Appwraps.NSDispatcher
+  @objc public var onMessage: ((Swift.String) -> ())?
+  @objc public class func sharedInstance() -> Appwraps.NSDispatcher
+  @objc public func testTheSingleton() -> Swift.String
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class UmamiTracker {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class EstetikoShopper {
+  public var cartAmount: Swift.Int
+  public static let instance: Appwraps.EstetikoShopper
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class UserDataSource {
+  public static var fcmToken: Swift.String?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class UmamiHandler {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class AWViewController : UIKit.UIViewController, WebKit.WKNavigationDelegate, WebKit.WKScriptMessageHandler, WebKit.WKUIDelegate {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc public func userContentController(_ userContentController: WebKit.WKUserContentController, didReceive message: WebKit.WKScriptMessage)
+  @_Concurrency.MainActor(unsafe) @objc public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
+  @_Concurrency.MainActor(unsafe) @objc public func webView(_: WebKit.WKWebView, didStartProvisionalNavigation _: WebKit.WKNavigation!)
+  @_Concurrency.MainActor(unsafe) @objc public func webView(_ webView: WebKit.WKWebView, runJavaScriptAlertPanelWithMessage message: Swift.String, initiatedByFrame frame: WebKit.WKFrameInfo, completionHandler: @escaping () -> Swift.Void)
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension Appwraps.AWViewController : UIKit.UIScrollViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
+}
+public class AppwrapsClient {
+  public var viewController: Appwraps.AWViewController
+  public init(url: Swift.String, closeButton: Swift.Bool = false, backButton: Swift.Bool = false)
+  public func didReceiveMessage(webview: WebKit.WKWebView, message: WebKit.WKScriptMessage)
+  public func didFinishNavigation(webview: WebKit.WKWebView)
+  @objc deinit
+}

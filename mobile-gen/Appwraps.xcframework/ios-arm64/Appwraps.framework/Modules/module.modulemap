@@ -1,0 +1,11 @@
+framework module Appwraps {
+  umbrella header "Appwraps.h"
+
+  export *
+  module * { export * }
+}
+
+module Appwraps.Swift {
+    header "Appwraps-Swift.h"
+    requires objc
+}
